@@ -33,6 +33,15 @@ button:hover{
     );
     background-size: 400%;
     box-shadow: 0 0 15px rgba(2, 4, 24);
+    animation: glow 12s linear forwards;
+}
+@keyframes glow{
+    from{
+        background-position: 0%;
+    }
+    to{
+        background-position: 400%;
+    }
 }
 button::before{
     content: '';
@@ -43,7 +52,10 @@ button::before{
     left: -1px;
     background: inherit;
     filter: blur(36px);
-    z-index: -1;
     opacity: 0;
     transition: .4s ease-out;
+}
+button:hover::before{
+    opacity: 1;
+    z-index: -1;
 }
